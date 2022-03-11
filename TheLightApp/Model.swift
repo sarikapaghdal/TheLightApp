@@ -12,6 +12,7 @@ struct EnergyClass: Identifiable {
     let id = UUID()
     let color : UIColor
     let title : String
+    
 }
 
 struct Categories: Identifiable {
