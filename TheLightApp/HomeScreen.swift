@@ -237,7 +237,7 @@ struct ProductCardView: View {
             .background(.white)
             .frame(height: size/5)
         }
-        .padding()
+        .padding(.horizontal)
         .frame(width: size + 200)
         .background(.white)
         .cornerRadius(20.0, corners: [.topLeft, .bottomLeft])
