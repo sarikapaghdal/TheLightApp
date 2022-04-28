@@ -43,7 +43,7 @@ struct HomeScreen: View {
                             .padding(.top)
                         
                         ZStack {
-                            Color.gray.opacity(0.2).ignoresSafeArea()
+                            Color("Primary").ignoresSafeArea()
                             VStack (alignment: .leading){
                                     
                                     Text("Trending Now")
@@ -143,6 +143,7 @@ struct RoundedCorner: Shape {
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
     }
 }
 

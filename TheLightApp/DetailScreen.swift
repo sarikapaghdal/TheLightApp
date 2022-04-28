@@ -33,14 +33,14 @@ struct DetailScreen: View {
                 Text("Add to Cart")
                     .font(.title2)
                     .fontWeight(.semibold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .padding()
                     .padding(.horizontal, 8)
                 
             }
             //.padding()
             //.padding(.horizontal)
-            .background(.orange)
+            .background(.white)
             //.cornerRadius(60.0, corners: .topRight)
             .frame(maxHeight: .infinity, alignment: .bottom)
             .edgesIgnoringSafeArea(.bottom)
@@ -91,15 +91,17 @@ struct DescriptionView: View {
                 .fontWeight(.semibold)
                 .padding(.top)
             
-            HStack (spacing : 10){
-            
-                ForEach(0..<productDetailData.energyClass.count) { i in
-                    Text(productDetailData.energyClass[i].title)
-                        .fontWeight(.semibold)
-                        .frame(width: 50 , height: 40)
-                        .border(i == 0 ? .red : .white)
-                        .foregroundColor(.white)
-                        .background(Color(productDetailData.energyClass[i].color))
+            ScrollView (.horizontal, showsIndicators: false) {
+                HStack (spacing : 10){
+                
+                    ForEach(0..<productDetailData.energyClass.count) { i in
+                        Text(productDetailData.energyClass[i].title)
+                            .fontWeight(.semibold)
+                            .frame(width: 50 , height: 40)
+                            .border(i == 0 ? .red : .white)
+                            .foregroundColor(.white)
+                            .background(Color(productDetailData.energyClass[i].color))
+                    }
                 }
             }
             
@@ -138,6 +140,7 @@ struct DescriptionView: View {
             }
 
         }
+        .padding(.leading, 30)
         .cornerRadius(70, corners: .bottomRight)
     }
 }
